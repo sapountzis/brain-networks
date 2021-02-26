@@ -9,3 +9,14 @@
 nav.TopNav {
     padding: 0;
 }
+
+.icon {
+    width: 56px;
+    height: 60px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+.brandPadding {
+    padding: 0;
+}
