@@ -3,6 +3,7 @@ import * as React from 'react';
 import {Nav, Navbar, NavDropdown} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import classes from './TopNav.module.css'
+import brainIcon from './brainIcon.svg'
 
 type Props = {
 
@@ -11,7 +12,7 @@ type Props = {
 export function TopNav(props: Props) {
     return (
         <Navbar bg="dark" variant="dark" sticky="top" expand="lg" className={classes.TopNav}>
-            <Navbar.Brand><Link to="/" className="nav-link">Brain Networks</Link></Navbar.Brand>
+            <Navbar.Brand><Link to="/" className={"nav-link " + classes.brandPadding}><img src={brainIcon} alt={"Brain Network"} className={classes.icon} />Brain Networks</Link></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className={"mr-auto "+classes.TopNav}>
