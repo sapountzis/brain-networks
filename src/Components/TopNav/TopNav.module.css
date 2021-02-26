@@ -1,0 +1,11 @@
+.TopNav a {
+    color: #c6c6c6;
+}
+
+.TopNav a:hover {
+    color: #dedede;
+}
+
+nav.TopNav {
+    padding: 0;
+}

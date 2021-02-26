@@ -1,46 +1,26 @@
 import './App.css';
+import {TopNav} from "./Components/TopNav/TopNav";
+import {BrowserRouter as Router} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {TopNav} from "./TopNav/TopNav";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route
-} from "react-router-dom";
-import Plot from 'react-plotly.js';
+import {Body} from "./Components/Body/Body";
+import {ThemeSwitch} from "./Components/ThemeSwitch/ThemeSwitch";
+import {useState} from "react";
+import ThemeContext from "./Components/ThemeContext";
+
 
 function App() {
-    var trace1 = {
-        type: 'bar',
-        x: [1, 2, 3, 4],
-        y: [5, 10, 2, 8],
-        marker: {
-            color: '#C8A2C8',
-            line: {
-                width: 2.5
-            }
-        }
-    };
+    import('bootstrap/dist/css/bootstrap.min.css')
 
-    var data = [ trace1 ];
+    const [theme, setTheme] = useState('light')
 
-    var layout = {
-        title: 'Responsive to window\'s size!',
-        font: {size: 18}
-    };
-
-    var config = {responsive: true}
     return (
-        <div className="App">
+        <div className={"App" + (theme==="dark" ? " dark" : "")}>
             <Router>
                 <TopNav />
-                <Switch>
-                    <Route path="/home">
-                        <Plot data={data} layout={layout} config={config} />
-                    </Route>
-                    <Route path="/link">
-                        <p>link</p>
-                    </Route>
-                </Switch>
+                <ThemeContext.Provider value={theme}>
+                    <ThemeSwitch changeTheme={setTheme} />
+                    <Body />
+                </ThemeContext.Provider>
             </Router>
         </div>
     );
