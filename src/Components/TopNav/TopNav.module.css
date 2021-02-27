@@ -17,6 +17,6 @@ nav.TopNav {
     margin-left: 10px;
 }
 
-.brandPadding {
-    padding: 0;
+.brandPadding a {
+    padding: 0
 }
