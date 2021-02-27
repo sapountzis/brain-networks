@@ -11,14 +11,21 @@ import ThemeContext from "./Components/ThemeContext";
 function App() {
     import('bootstrap/dist/css/bootstrap.min.css')
 
-    const [theme, setTheme] = useState('light')
+    const savedTheme = window.localStorage.getItem('theme')
+
+    const [theme, setTheme] = useState(savedTheme ? savedTheme : 'light')
+
+    const changeTheme = (newTheme) => {
+        setTheme(newTheme)
+        window.localStorage.setItem('theme', newTheme)
+    }
 
     return (
         <div className={"App" + (theme==="dark" ? " dark" : "")}>
             <Router>
                 <TopNav />
                 <ThemeContext.Provider value={theme}>
-                    <ThemeSwitch changeTheme={setTheme} />
+                    <ThemeSwitch changeTheme={changeTheme} />
                     <Body />
                 </ThemeContext.Provider>
             </Router>

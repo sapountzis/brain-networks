@@ -22,7 +22,7 @@ export function ThemeSwitch(props: Props) {
             {theme => (
                 <div className={classes.switchDiv}>
                     <label className={classes.switch}>
-                        <input type="checkbox" onClick={() => toggleTheme(theme)} />
+                        <input checked={theme === "dark"} type="checkbox" onChange={() => toggleTheme(theme)} />
                         <span className={[classes.slider, classes.round].join(" ")}/>
                     </label>
                 </div>
