@@ -13,7 +13,7 @@ export function TopNav(props: Props) {
 
     const [logo, setLogo] = useState("")
 
-    import('./brainIcon.svg').then(l => {
+    import('./brainIcon.png').then(l => {
         setLogo(l)
     })
 
