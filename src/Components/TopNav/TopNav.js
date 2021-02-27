@@ -12,13 +12,13 @@ export function TopNav(props: Props) {
 
     const [logo, setLogo] = useState("")
 
-    import('./brainIcon.png').then(l => {
+    import('./brainLogo.png').then(l => {
         setLogo(l)
     })
 
     return (
         <Navbar bg="dark" variant="dark" sticky="top" expand="lg" className={classes.TopNav}>
-            <Navbar.Brand className={classes.brandPadding}><Link to="/" className={"nav-link"}><img src={logo.default} alt={"Brain Network"} className={classes.icon} />Brain Networks</Link></Navbar.Brand>
+            <Navbar.Brand className={classes.brandPadding}><Link to="/" className={"nav-link"}><img src={logo.default} alt={"Brain Network"} className={classes.logo} />Brain Networks</Link></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className={"mr-auto "+classes.TopNav}>
