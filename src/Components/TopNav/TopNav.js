@@ -6,7 +6,6 @@ import classes from './TopNav.module.css'
 import {useState} from "react";
 
 type Props = {
-
 };
 
 export function TopNav(props: Props) {
@@ -36,4 +35,4 @@ export function TopNav(props: Props) {
             </Navbar.Collapse>
         </Navbar>
     );
-};
+}

@@ -11,8 +11,7 @@ nav.TopNav {
 }
 
 .icon {
-    width: 56px;
-    height: 60px;
+    max-height: 60px;
     margin-right: 20px;
     margin-left: 10px;
 }
